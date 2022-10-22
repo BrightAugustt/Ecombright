@@ -14,7 +14,8 @@ class general_class extends db_connection
 {
 	//--INSERT--//
 	
-	public function add_customer($customer_name, $customer_email, $customer_pass, $customer_country, $customer_city, $customer_contact, $customer_image, $user_role){
+	public function add_customer($customer_name, $customer_email, $customer_pass, $customer_country, 
+	$customer_city, $customer_contact, $customer_image, $user_role){
 
 		// Write query
 		$sql = "INSERT INTO `customer`(`customer_name`,`customer_email`,`customer_pass`,`customer_country`,`customer_city`,`customer_contact`,`customer_image`,`user_role`) 
@@ -43,7 +44,7 @@ class general_class extends db_connection
 		$sql = "Select * FROM `customer` where customer_id = $customer_id";
 
 		// Excute query
-		return$this -> db_query($sql);
+		return$this -> db_fetch_one($sql);
 	}
 
 	//--UPDATE--//
