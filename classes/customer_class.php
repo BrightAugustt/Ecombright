@@ -44,7 +44,7 @@ class general_class extends db_connection
 		$sql = "Select * FROM `customer` where customer_id = $customer_id";
 
 		// Excute query
-		return$this -> db_fetch_one($sql);
+		return$this -> db_query($sql);
 	}
 
 	//--UPDATE--//
